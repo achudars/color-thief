@@ -239,34 +239,7 @@ Licensed under the [Creative Commons Attribution 2.5 License](https://creativeco
 - ✅ Free for use in both personal and commercial projects
 - ✅ Attribution required: Leave author name, author homepage link, and the license info intact
 
-## 📊 Migration Guide
-
-### From Original Color Thief
-
-```javascript
-// Old way (jQuery dependency)
-$(document).ready(function () {
-  var colorThief = new ColorThief();
-  var color = colorThief.getColor(img);
-  var palette = colorThief.getPalette(img, 5);
-});
-
-// New way (modern ES6+)
-import { ColorThief } from 'color-thief-modern';
-
-const color = ColorThief.getDominantColor(img);
-const palette = ColorThief.getPalette(img, 5);
-```
-
-### Breaking Changes
-
-- No jQuery dependency
-- Static methods instead of class instantiation
-- ES modules instead of global variables
-- `getColor()` renamed to `getDominantColor()`
-- `getPalette()` parameters reordered
-
-## 🔗 Links
+## Links
 
 - [Original Color Thief](https://github.com/lokesh/color-thief)
 - [Lokesh's Blog Post](http://www.lokeshdhakar.com/color-thief/)

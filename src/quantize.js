@@ -163,7 +163,7 @@ class CMap {
 
   push(vbox) {
     this.vboxes.push({
-      vbox: vbox,
+      vbox,
       color: vbox.avg()
     });
   }
@@ -324,8 +324,8 @@ function medianCutApply(histo, vbox) {
   });
 
   function doCut(color) {
-    const dim1 = color + '1';
-    const dim2 = color + '2';
+    const dim1 = `${color}1`;
+    const dim2 = `${color}2`;
     let left,
       right,
       vbox1,

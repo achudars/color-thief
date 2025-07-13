@@ -196,7 +196,7 @@ export class ColorThief {
    * @returns {string} Hex color string
    */
   static rgbToHex(rgb) {
-    return '#' + rgb.map(c => c.toString(16).padStart(2, '0')).join('');
+    return `#${rgb.map(c => c.toString(16).padStart(2, '0')).join('')}`;
   }
 
   /**
@@ -219,15 +219,15 @@ export class ColorThief {
       s = l > 0.5 ? diff / (2 - max - min) : diff / (max + min);
 
       switch (max) {
-        case r:
-          h = (g - b) / diff + (g < b ? 6 : 0);
-          break;
-        case g:
-          h = (b - r) / diff + 2;
-          break;
-        case b:
-          h = (r - g) / diff + 4;
-          break;
+      case r:
+        h = (g - b) / diff + (g < b ? 6 : 0);
+        break;
+      case g:
+        h = (b - r) / diff + 2;
+        break;
+      case b:
+        h = (r - g) / diff + 4;
+        break;
       }
       h /= 6;
     }
@@ -237,8 +237,8 @@ export class ColorThief {
 }
 
 // Legacy function exports for backward compatibility
-export const getDominantColor = ColorThief.getDominantColor;
-export const getPalette = ColorThief.getPalette;
+export const { getDominantColor } = ColorThief;
+export const { getPalette } = ColorThief;
 export const createPalette = ColorThief.getPalette; // Alias for old function name
 export const getAverageRGB = ColorThief.getAverageColor;
 

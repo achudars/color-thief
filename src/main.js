@@ -98,7 +98,7 @@ class ColorThiefApp {
     uploadSection.addEventListener(
       'drop',
       event => {
-        const files = event.dataTransfer.files;
+        const { files } = event.dataTransfer;
         if (files.length > 0) {
           this.processImageFile(files[0]);
         }
