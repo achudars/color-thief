@@ -1,11 +1,11 @@
-# Color Thief - Modern Edition*
+# Color Thief - Modern Edition\*
 
 [![npm version](https://badge.fury.io/js/color-thief-modern.svg)](https://badge.fury.io/js/color-thief-modern)
 [![License: CC BY 2.5](https://img.shields.io/badge/License-CC%20BY%202.5-lightgrey.svg)](https://creativecommons.org/licenses/by/2.5/)
 
 A modern, fast JavaScript library for extracting dominant colors and color palettes from images. Built with ES6+ features and optimized for modern browsers.
 
-### *With additional upload functionality, so now it provides you the possibility to try this plugin to see if it fits your needs. -Aleks
+### \*With additional upload functionality, so now it provides you the possibility to try this plugin to see if it fits your needs. -Aleks
 
 [See a Demo](http://lokeshdhakar.com/projects/color-thief) | [Read more on Lokesh's blog](http://lokeshdhakar.com/color-thief) | [Try the Modern Version](https://achudars.github.io/color-thief/)
 
@@ -106,8 +106,8 @@ The original function names are still available as named exports:
 import { getDominantColor, createPalette } from 'color-thief-modern';
 
 // Original API still works
-getDominantColor(sourceImage)  // Returns [num, num, num]
-createPalette(sourceImage, colorCount)  // Returns [[num, num, num], ...]
+getDominantColor(sourceImage); // Returns [num, num, num]
+createPalette(sourceImage, colorCount); // Returns [[num, num, num], ...]
 ```
 
 ### `ColorThief.getAverageColor(image, sampleSize?)`
@@ -181,7 +181,7 @@ npm run format
 │   └── styles.css        # Modern CSS styles
 ├── public/               # Static assets
 ├── dist/                # Built files
-├── index-modern.html    # Modern demo page
+├── index.html           # Modern demo page
 ├── package.json
 ├── vite.config.js       # Vite configuration
 ├── eslint.config.js     # ESLint configuration
@@ -236,7 +236,7 @@ Thanks to [Nick Rabinowitz](https://github.com/NickRabinowitz) for creating quan
 
 Licensed under the [Creative Commons Attribution 2.5 License](https://creativecommons.org/licenses/by/2.5/)
 
-- ✅ Free for use in both personal and commercial projects  
+- ✅ Free for use in both personal and commercial projects
 - ✅ Attribution required: Leave author name, author homepage link, and the license info intact
 
 ## 📊 Migration Guide

@@ -10,17 +10,17 @@ export default defineConfig({
     sourcemap: true,
     minify: 'terser',
     rollupOptions: {
-      input: './index-modern.html'
+      input: './index.html'
     }
   },
   server: {
     port: 3000,
-    open: '/index-modern.html',
+    open: '/index.html',
     cors: true
   },
   preview: {
     port: 4173,
-    open: '/index-modern.html'
+    open: '/index.html'
   },
   css: {
     devSourcemap: true

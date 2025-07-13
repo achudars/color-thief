@@ -1,72 +1,100 @@
-<!doctype html>
-<html class="no-js" lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <link href='http://fonts.googleapis.com/css?family=Varela+Round|Terminal+Dosis:400,700,600' rel='stylesheet' type='text/css'>
-	<title>Color Thief</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<link rel="stylesheet" href="css/app.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Thief - Modern Color Palette Extractor</title>
+  <meta name="description" content="A modern JavaScript tool for extracting dominant colors and color palettes from images using canvas and advanced algorithms.">
+  <meta name="author" content="Lokesh Dhakar (original), Aleksandrs Cudars (modernized)">
+  
+  <!-- Preconnect to external domains for better performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Modern font loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="./src/styles.css">
+  
+  <!-- Open Graph meta tags for social sharing -->
+  <meta property="og:title" content="Color Thief - Modern Color Palette Extractor">
+  <meta property="og:description" content="Extract dominant colors and palettes from any image using modern JavaScript">
+  <meta property="og:type" content="website">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
 </head>
 <body>
-<a href="https://github.com/achudars/color-thief"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
-<div id="container">
-	<header>
-      <h1>Color Thief*</h1>
-      <h4><a href="http://lokeshdhakar.com">by Lokesh Dhakar and upload functionality by Aleksandrs Cudars</a></small></h4>
-      <p>A script for grabbing the dominant color or color palette from an image. Uses Javascript and the canvas tag to make it happen.</p>
-      <p><a href="http://www.lokeshdhakar.com/color-thief/">Lokesh's blog</a> | <a href="https://github.com/lokesh/color-thief">Get Lokesh's code on Github</a> | <a href="https://github.com/achudars/color-thief">Get Aleks's code on Github</a>
-      </p>
-	</header>
-
-	<div id="main" role="main">
-
-	</div>
-</div> <!--! end of #container -->
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-<script src="js/libs/jquery.lettering.js"></script>
-<script src="js/libs/mustache.js"></script>
-<script src="js/libs/quantize.js"></script>
-<script src="js/color-thief.js"></script>
-
-<!-- PLACEHOLDER FOR THE IMAGE -->
-<script id='template' type='text/x-mustache'>
-<input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();" />
-<div class="imageSection">
-    <div class="imageWrap">
-      <img class="targetImage" id="uploadPreview" data-colorcount="{{colorCount}}" />
-    </div>
-    <div class="colors">
-      <div class="function dominantColor">
-        <h3>Dominant Color</h3>
-        <div class="swatches"></div>
+  <div id="container">
+    <header>
+      <div class="header-content">
+        <h1 class="main-title">Color Thief</h1>
+        <p class="subtitle">Modern color palette extraction from images</p>
+        <div class="description">
+          <p>A modern JavaScript library for extracting dominant colors and color palettes from images. 
+             Uses advanced algorithms and the HTML5 canvas API for fast, accurate color analysis.</p>
+        </div>
+        <div class="links">
+          <a href="https://github.com/achudars/color-thief" class="github-link" target="_blank" rel="noopener">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            View on GitHub
+          </a>
+          <a href="https://www.lokeshdhakar.com/color-thief/" class="blog-link" target="_blank" rel="noopener">
+            📝 Original Blog Post
+          </a>
+        </div>
       </div>
-      <div class="function medianCutPalette clearfix">
-        <h3>Palette</h3>
-        <div class="swatches"></div>
+    </header>
+
+    <main id="main" role="main">
+      <!-- Dynamic content will be inserted here -->
+    </main>
+
+    <section class="features">
+      <div class="features-grid">
+        <div class="feature">
+          <h3>🎨 Advanced Algorithm</h3>
+          <p>Uses the modified median cut quantization (MMCQ) algorithm for accurate color extraction</p>
+        </div>
+        <div class="feature">
+          <h3>⚡ Modern Performance</h3>
+          <p>Built with ES6+ features, optimized for modern browsers with excellent performance</p>
+        </div>
+        <div class="feature">
+          <h3>📱 Responsive Design</h3>
+          <p>Works seamlessly across desktop, tablet, and mobile devices</p>
+        </div>
+        <div class="feature">
+          <h3>🔗 Easy Integration</h3>
+          <p>Simple API that works with any image source - upload, URL, or canvas element</p>
+        </div>
       </div>
-    </div>
-</div>
+    </section>
 
-</script>
+    <section class="api-example">
+      <h2>Usage Example</h2>
+      <div class="code-block">
+        <pre><code>import { ColorThief } from './color-thief.js';
 
-<!-- PREVIEW OF THE IMAGE -->
-<script type="text/javascript">
-    function PreviewImage() {
-        oFReader = new FileReader();
-        oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+// Get dominant color
+const dominantColor = ColorThief.getDominantColor(imageElement);
+// Returns: [r, g, b] array
 
-        oFReader.onload = function (oFREvent) {
-            document.getElementById("uploadPreview").src = oFREvent.target.result;
-        };
-    };
-</script>
-<!-- COLOR THIEF DOES ITS MAGIC HERE -->
-<script src="index.js"></script>
-<script src="js/libs/socialite.min.js"></script>
+// Get color palette
+const palette = ColorThief.getPalette(imageElement, 8);
+// Returns: [[r,g,b], [r,g,b], ...] array
+
+// Convert to hex
+const hexColor = ColorThief.rgbToHex(dominantColor);
+// Returns: "#ff5733"</code></pre>
+      </div>
+    </section>
+  </div>
+
+  <!-- Load the modern app -->
+  <script type="module" src="./src/main.js"></script>
 </body>
 </html>
