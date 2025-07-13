@@ -28,14 +28,14 @@
     "url": "https://github.com/achudars/color-thief.git"
   },
   "devDependencies": {
-    "vite": "^5.4.0",
+    "@eslint/js": "^9.0.0",
     "eslint": "^9.0.0",
     "prettier": "^3.3.0",
-    "vitest": "^2.0.0",
-    "@eslint/js": "^9.0.0",
-    "sass": "^1.77.0"
+    "sass": "^1.77.0",
+    "terser": "^5.43.1",
+    "vite": "^5.4.0",
+    "vitest": "^2.0.0"
   },
-  "dependencies": {},
   "browserslist": [
     "> 1%",
     "last 2 versions",
