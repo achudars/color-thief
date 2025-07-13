@@ -9,7 +9,7 @@ A modern, fast JavaScript library for extracting dominant colors and color palet
 
 [See a Demo](http://lokeshdhakar.com/projects/color-thief) | [Read more on Lokesh's blog](http://lokeshdhakar.com/color-thief) | [Try the Modern Version](https://achudars.github.io/color-thief/)
 
-![Color Thief Demo](https://i.imgur.com/AKoBgXK.png)
+![Color Thief Demo](color-thief.png)
 
 ## ✨ Features
 
