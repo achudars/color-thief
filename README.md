@@ -1,9 +1,13 @@
-# Color Thief - Modern Edition
+# Color Thief - Modern Edition*
 
 [![npm version](https://badge.fury.io/js/color-thief-modern.svg)](https://badge.fury.io/js/color-thief-modern)
 [![License: CC BY 2.5](https://img.shields.io/badge/License-CC%20BY%202.5-lightgrey.svg)](https://creativecommons.org/licenses/by/2.5/)
 
 A modern, fast JavaScript library for extracting dominant colors and color palettes from images. Built with ES6+ features and optimized for modern browsers.
+
+### *With additional upload functionality, so now it provides you the possibility to try this plugin to see if it fits your needs. -Aleks
+
+[See a Demo](http://lokeshdhakar.com/projects/color-thief) | [Read more on Lokesh's blog](http://lokeshdhakar.com/color-thief) | [Try the Modern Version](https://achudars.github.io/color-thief/)
 
 ![Color Thief Demo](https://i.imgur.com/AKoBgXK.png)
 
@@ -73,7 +77,7 @@ const hslColor = ColorThief.rgbToHsl(dominantColor);
 
 ### `ColorThief.getDominantColor(image, quality?)`
 
-Returns the dominant color from an image.
+Returns the dominant color from an image. Uses the median cut algorithm provided by quantize.js to cluster similar colors and return the base color from the largest cluster.
 
 **Parameters:**
 
@@ -84,7 +88,7 @@ Returns the dominant color from an image.
 
 ### `ColorThief.getPalette(image, colorCount?, quality?)`
 
-Returns a color palette from an image.
+Returns a color palette from an image. Uses the median cut algorithm provided by quantize.js to cluster similar colors.
 
 **Parameters:**
 
@@ -93,6 +97,18 @@ Returns a color palette from an image.
 - `quality` (number, optional): Quality/speed trade-off (1-10, default: 10)
 
 **Returns:** `number[][]|null` - Array of RGB arrays [[r,g,b], ...] or null if failed
+
+### Legacy API (Backward Compatibility)
+
+The original function names are still available as named exports:
+
+```javascript
+import { getDominantColor, createPalette } from 'color-thief-modern';
+
+// Original API still works
+getDominantColor(sourceImage)  // Returns [num, num, num]
+createPalette(sourceImage, colorCount)  // Returns [[num, num, num], ...]
+```
 
 ### `ColorThief.getAverageColor(image, sampleSize?)`
 
@@ -213,17 +229,15 @@ npm run format
 
 ## 📄 License
 
+**By** [Lokesh Dhakar](http://www.lokeshdhakar.com) | [lokeshdhakar.com](http://www.lokeshdhakar.com) | [twitter.com/lokeshdhakar](http://twitter.com/lokeshdhakar)  
+**Modernized by** [Aleksandrs Cudars](https://github.com/achudars) with additional upload functionality
+
+Thanks to [Nick Rabinowitz](https://github.com/NickRabinowitz) for creating quantize.js which provides the MMCQ algorithm, [jfsiii](https://github.com/jfsiii) for a large number of code improvements, and others for submitting issues and fixes.
+
 Licensed under the [Creative Commons Attribution 2.5 License](https://creativecommons.org/licenses/by/2.5/)
 
-- ✅ Free for use in both personal and commercial projects
-- ✅ Attribution required (keep author name, homepage link, and license info intact)
-
-## 🙏 Credits
-
-- **Original Author**: [Lokesh Dhakar](http://www.lokeshdhakar.com)
-- **Algorithm**: Nick Rabinowitz (quantize.js - MMCQ algorithm)
-- **Modernization**: Aleksandrs Cudars
-- **Contributors**: [All contributors](https://github.com/achudars/color-thief/contributors)
+- ✅ Free for use in both personal and commercial projects  
+- ✅ Attribution required: Leave author name, author homepage link, and the license info intact
 
 ## 📊 Migration Guide
 
