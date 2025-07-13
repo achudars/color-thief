@@ -1,0 +1,44 @@
+{
+  "name": "color-thief-modern",
+  "version": "2.0.0",
+  "description": "A modern JavaScript library for extracting dominant colors and color palettes from images",
+  "main": "src/color-thief.js",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src/",
+    "format": "prettier --write src/",
+    "test": "vitest"
+  },
+  "keywords": [
+    "color",
+    "palette",
+    "image",
+    "dominant-color",
+    "color-extraction",
+    "canvas",
+    "javascript"
+  ],
+  "author": "Lokesh Dhakar (original), Aleksandrs Cudars (upload functionality)",
+  "license": "CC-BY-2.5",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/achudars/color-thief.git"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.3.0",
+    "vitest": "^2.0.0",
+    "@eslint/js": "^9.0.0",
+    "sass": "^1.77.0"
+  },
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

@@ -1,3 +1,29 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
 # Compiled source #
 ###################
 *.com
@@ -33,9 +59,28 @@ ehthumbs.db
 Icon?
 Thumbs.db
 
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Sass cache
+.sass-cache/*
+
+# Temporary folders
+tmp/
+temp/
+
 # App Files #
 #############
 *.tmproj
-.sass-cache/*
 Rakefile
 rsync-exclude

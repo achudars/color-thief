@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Color Thief Test</title>
+</head>
+<body>
+  <h1>Testing Color Thief Module Loading</h1>
+  <div id="output"></div>
+  
+  <script type="module">
+    const output = document.getElementById('output');
+    
+    function log(message) {
+      output.innerHTML += '<p>' + message + '</p>';
+      console.log(message);
+    }
+    
+    try {
+      log('Starting import test...');
+      
+      // Import the ColorThief module
+      import('./src/color-thief.js').then(module => {
+        log('✅ color-thief.js imported successfully');
+        log('Available exports: ' + Object.keys(module).join(', '));
+        
+        const { ColorThief } = module;
+        if (ColorThief) {
+          log('✅ ColorThief class found');
+          log('Methods: ' + Object.getOwnPropertyNames(ColorThief).join(', '));
+          
+          // Test with a simple canvas
+          const canvas = document.createElement('canvas');
+          canvas.width = 50;
+          canvas.height = 50;
+          const ctx = canvas.getContext('2d');
+          ctx.fillStyle = '#ff0000';
+          ctx.fillRect(0, 0, 50, 50);
+          
+          try {
+            const color = ColorThief.getDominantColor(canvas);
+            log('✅ getDominantColor test successful: [' + color + ']');
+          } catch (error) {
+            log('❌ getDominantColor test failed: ' + error.message);
+          }
+        } else {
+          log('❌ ColorThief class not found in exports');
+        }
+      }).catch(error => {
+        log('❌ Failed to import color-thief.js: ' + error.message);
+      });
+      
+    } catch (error) {
+      log('❌ Script error: ' + error.message);
+    }
+  </script>
+</body>
+</html>

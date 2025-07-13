@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Color Thief Test</title>
+</head>
+<body>
+  <h1>Color Thief Direct Test</h1>
+  <canvas id="testCanvas" width="100" height="100" style="border: 1px solid #000;"></canvas>
+  <div id="result"></div>
+  
+  <script type="module">
+    // Draw a red square on canvas
+    const canvas = document.getElementById('testCanvas');
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#ff0000';
+    ctx.fillRect(0, 0, 100, 100);
+    
+    const result = document.getElementById('result');
+    
+    // Test quantize module first
+    try {
+      const quantizeModule = await import('./src/quantize.js');
+      result.innerHTML += '<p>✅ Quantize module loaded</p>';
+      console.log('Quantize module:', quantizeModule);
+      
+      const { MMCQ } = quantizeModule;
+      if (MMCQ && MMCQ.quantize) {
+        result.innerHTML += '<p>✅ MMCQ.quantize found</p>';
+        
+        // Test basic quantization
+        const testPixels = [[255, 0, 0], [255, 0, 0], [254, 1, 1]];
+        const cmap = MMCQ.quantize(testPixels, 2);
+        if (cmap) {
+          result.innerHTML += '<p>✅ Basic quantization works</p>';
+          
+          // Now test ColorThief
+          const colorThiefModule = await import('./src/color-thief.js');
+          result.innerHTML += '<p>✅ ColorThief module loaded</p>';
+          
+          const { ColorThief } = colorThiefModule;
+          if (ColorThief && ColorThief.getDominantColor) {
+            result.innerHTML += '<p>✅ ColorThief.getDominantColor found</p>';
+            
+            try {
+              const dominantColor = ColorThief.getDominantColor(canvas);
+              result.innerHTML += '<p>✅ Dominant color: [' + dominantColor.join(', ') + ']</p>';
+            } catch (error) {
+              result.innerHTML += '<p>❌ Error getting dominant color: ' + error.message + '</p>';
+              console.error('Error:', error);
+            }
+          } else {
+            result.innerHTML += '<p>❌ ColorThief.getDominantColor not found</p>';
+          }
+        } else {
+          result.innerHTML += '<p>❌ Basic quantization failed</p>';
+        }
+      } else {
+        result.innerHTML += '<p>❌ MMCQ.quantize not found</p>';
+      }
+    } catch (error) {
+      result.innerHTML += '<p>❌ Error: ' + error.message + '</p>';
+      console.error('Error:', error);
+    }
+  </script>
+</body>
+</html>
