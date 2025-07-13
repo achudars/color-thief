@@ -219,7 +219,6 @@ class ColorThiefApp {
       }, 300);
     }, 2000);
   }
-
 }
 
 // Initialize the app when DOM is loaded
