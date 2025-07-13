@@ -21,7 +21,6 @@ class ColorThiefApp {
   init() {
     this.createUI();
     this.setupEventListeners();
-    this.animateTitle();
   }
 
   createUI() {
@@ -221,20 +220,6 @@ class ColorThiefApp {
     }, 2000);
   }
 
-  animateTitle() {
-    // Modern CSS animation approach instead of lettering.js
-    const title = document.querySelector('h1');
-    if (title) {
-      title.classList.add('animated-title');
-
-      // Split text into spans for animation
-      const text = title.textContent;
-      title.innerHTML = text
-        .split('')
-        .map((char, i) => `<span style="animation-delay: ${i * 0.1}s">${char}</span>`)
-        .join('');
-    }
-  }
 }
 
 // Initialize the app when DOM is loaded
