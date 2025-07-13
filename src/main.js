@@ -141,12 +141,10 @@ class ColorThiefApp {
   processImage() {
     if (!this.imagePreview.complete) return;
 
-    // Clear previous swatches
+    // Clear all previous swatches
     const swatches = document.querySelectorAll('.swatches');
     swatches.forEach(swatch => {
-      while (swatch.children.length >= 10) {
-        swatch.removeChild(swatch.firstChild);
-      }
+      swatch.innerHTML = '';
     });
 
     try {
