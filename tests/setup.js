@@ -43,7 +43,7 @@ Object.defineProperty(globalThis, 'HTMLCanvasElement', {
 // Mock document.createElement for canvas
 const originalCreateElement = globalThis.document?.createElement;
 if (globalThis.document) {
-  globalThis.document.createElement = vi.fn((tagName) => {
+  globalThis.document.createElement = vi.fn(tagName => {
     if (tagName === 'canvas') {
       return new globalThis.HTMLCanvasElement();
     }
@@ -53,7 +53,7 @@ if (globalThis.document) {
   // Mock document.body.appendChild to avoid DOM manipulation issues
   const originalAppendChild = globalThis.document.body?.appendChild;
   if (globalThis.document.body) {
-    globalThis.document.body.appendChild = vi.fn((child) => {
+    globalThis.document.body.appendChild = vi.fn(child => {
       // For canvas elements in test environment, just return the child
       if (child instanceof globalThis.HTMLCanvasElement || (child && child.tagName === 'CANVAS')) {
         return child;
@@ -101,6 +101,10 @@ Object.defineProperty(globalThis, 'FileReader', {
         });
       });
     }
+    // Add a dummy abort method to avoid "class with only a constructor" error
+    abort() {
+      // intentionally left blank
+    }
   },
   writable: true
 });
@@ -113,6 +117,10 @@ Object.defineProperty(globalThis, 'File', {
       this.type = options.type || '';
       this.size = bits.length;
       this.lastModified = Date.now();
+    }
+    // Add a dummy method to avoid "class with only a constructor" error
+    dummy() {
+      // intentionally left blank
     }
   },
   writable: true
