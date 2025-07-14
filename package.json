@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "lint": "eslint src/",
     "format": "prettier --write src/",
-    "test": "vitest"
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "keywords": [
     "color",
@@ -29,7 +30,9 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.31.0",
+    "@vitest/coverage-v8": "^3.2.4",
     "eslint": "^9.31.0",
+    "jsdom": "^26.1.0",
     "prettier": "^3.6.2",
     "sass": "^1.89.2",
     "terser": "^5.43.1",
