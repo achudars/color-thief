@@ -168,7 +168,7 @@ class ColorThiefApp {
   }
 
   appendColors(colors, container) {
-    colors.forEach((color, index) => {
+    colors.forEach(color => {
       const swatchEl = document.createElement('div');
       swatchEl.className = 'swatch';
       swatchEl.style.backgroundColor = `rgb(${color.join(',')})`;
