@@ -41,7 +41,9 @@
 }
 
 /* Reset and base styles */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -382,25 +384,25 @@ main {
   #container {
     padding: var(--spacing-md);
   }
-  
+
   .main-title {
     font-size: 2.5rem;
   }
-  
+
   .colors {
     grid-template-columns: 1fr;
   }
-  
+
   .features-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
   }
-  
+
   .links {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .upload-section {
     padding: var(--spacing-lg);
   }
@@ -410,12 +412,12 @@ main {
   .swatches {
     justify-content: center;
   }
-  
+
   .swatch {
     width: 40px;
     height: 40px;
   }
-  
+
   .imageSection {
     padding: var(--spacing-md);
   }
@@ -428,7 +430,7 @@ main {
   .notification {
     display: none;
   }
-  
+
   body {
     background: white;
     color: black;
@@ -441,7 +443,7 @@ main {
     --border: #000000;
     --shadow: rgba(0, 0, 0, 0.5);
   }
-  
+
   .swatch {
     border: 2px solid #000000;
   }
@@ -457,7 +459,7 @@ main {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  
+
   .animated-title span {
     animation: none;
   }

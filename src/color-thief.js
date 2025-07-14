@@ -219,15 +219,15 @@ export class ColorThief {
       s = l > 0.5 ? diff / (2 - max - min) : diff / (max + min);
 
       switch (max) {
-      case r:
-        h = (g - b) / diff + (g < b ? 6 : 0);
-        break;
-      case g:
-        h = (b - r) / diff + 2;
-        break;
-      case b:
-        h = (r - g) / diff + 4;
-        break;
+        case r:
+          h = (g - b) / diff + (g < b ? 6 : 0);
+          break;
+        case g:
+          h = (b - r) / diff + 2;
+          break;
+        case b:
+          h = (r - g) / diff + 4;
+          break;
       }
       h /= 6;
     }

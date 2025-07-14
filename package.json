@@ -33,8 +33,8 @@
     "prettier": "^3.6.2",
     "sass": "^1.89.2",
     "terser": "^5.43.1",
-    "vite": "^5.4.19",
-    "vitest": "^2.1.9"
+    "vite": "^7.0.4",
+    "vitest": "^3.2.4"
   },
   "browserslist": [
     "> 1%",
