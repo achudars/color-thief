@@ -125,7 +125,7 @@ class ColorThiefApp {
 
   processImageFile(file) {
     if (!file.type.startsWith('image/')) {
-      alert('Please select a valid image file.');
+      this.showNotification('Please select a valid image file.');
       return;
     }
 
