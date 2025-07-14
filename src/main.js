@@ -163,7 +163,7 @@ class ColorThiefApp {
       }
     } catch (error) {
       console.error('Error processing image:', error);
-      alert('Error processing image. Please try a different image.');
+      this.showNotification('Error processing image. Please try a different image.');
     }
   }
 
