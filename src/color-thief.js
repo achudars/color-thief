@@ -96,8 +96,8 @@ export class ColorThief {
     }
 
     // Validate parameters
-    colorCount = Math.max(2, Math.min(20, Math.floor(colorCount)));
-    quality = Math.max(1, Math.min(10, Math.floor(quality)));
+    const safeColorCount = Math.max(2, Math.min(20, Math.floor(colorCount)));
+    const safeQuality = Math.max(1, Math.min(10, Math.floor(quality)));
 
     const image = new CanvasImage(sourceImage);
     const imageData = image.getImageData();
@@ -112,7 +112,7 @@ export class ColorThief {
     const pixelArray = [];
 
     // Extract pixels with quality sampling
-    for (let i = 0; i < pixelCount; i += quality) {
+    for (let i = 0; i < pixelCount; i += safeQuality) {
       const offset = i * 4;
       const r = pixels[offset];
       const g = pixels[offset + 1];
@@ -131,7 +131,7 @@ export class ColorThief {
     }
 
     // Quantize colors using median cut algorithm
-    const cmap = MMCQ.quantize(pixelArray, colorCount);
+    const cmap = MMCQ.quantize(pixelArray, safeColorCount);
     const palette = cmap ? cmap.palette() : null;
 
     // Clean up
