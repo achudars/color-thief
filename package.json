@@ -29,9 +29,9 @@
     "url": "https://github.com/achudars/color-thief.git"
   },
   "devDependencies": {
-    "@eslint/js": "^9.33.0",
+    "@eslint/js": "^9.34.0",
     "@vitest/coverage-v8": "^3.2.4",
-    "eslint": "^9.33.0",
+    "eslint": "^9.34.0",
     "jsdom": "^26.1.0",
     "prettier": "^3.6.2",
     "sass": "^1.90.0",
