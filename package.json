@@ -1,6 +1,6 @@
 {
   "name": "color-thief-modern",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A modern JavaScript library for extracting dominant colors and color palettes from images",
   "main": "src/color-thief.js",
   "type": "module",
@@ -36,7 +36,7 @@
     "prettier": "^3.8.1",
     "sass": "^1.98.0",
     "terser": "^5.46.1",
-    "vite": "^7.3.1",
+    "vite": "^8.0.0",
     "vitest": "^4.1.0"
   },
   "browserslist": [
