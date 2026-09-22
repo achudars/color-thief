@@ -10,3 +10,6 @@ minimumReleaseAgeExclude:
   - '@vitest/spy@4.1.11'
   - '@vitest/utils@4.1.11'
   - vitest@4.1.11
+  - html-encoding-sniffer@7.0.0
+  - jsdom@30.1.1
+  - w3c-xmlserializer@6.0.0
